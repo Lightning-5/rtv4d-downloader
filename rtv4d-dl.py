@@ -8,7 +8,7 @@ client_id="82013fb3a531d5414f478747c1aca622"
 print("Dobrodošli v RTV-4D prenešalnik")
 print("Za vas pripravil Lightning5\n")
 
-originalUrl=input("Vnesite URL videa na RTV-4D:")
+originalUrl=input("Vnesite URL videa na RTV-4D:\n")
 showID=originalUrl.split("/")[-1]
 
 print("VideoID: " + showID)
