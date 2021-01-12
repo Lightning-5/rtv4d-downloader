@@ -26,9 +26,18 @@ mediaArr=mediaInfo['response']['mediaFiles']
 print("Izberi bitrate: (more is better)")
 
 for i in range(len(mediaArr)):
-    print(str(i) + ") " +  str(mediaArr[i]['bitrate']) + " bps")
+    print(str(i+1) + ") " +  str(mediaArr[i]['bitrate']) + " bps")
 
 izbranaKvaliteta = int(input())
+izbranaKvaliteta = izbranaKvaliteta - 1
 
-dlUrl = mediaArr[izbranaKvaliteta]['streams']['http']
+try:
+    dlUrl = mediaArr[izbranaKvaliteta]['streams']['http']
+except:
+    try:
+        dlUrl = mediaArr[izbranaKvaliteta]['streams']['https']
+    except:
+        print ("Napaka!")
+        exit()
+
 wget.download(dlUrl)
