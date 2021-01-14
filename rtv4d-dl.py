@@ -10,6 +10,7 @@ print("Za vas pripravil Lightning5\n")
 
 originalUrl=input("Vnesite URL videa na RTV-4D:\n")
 showID=originalUrl.split("/")[-1]
+showID=showID.split("?")[0]
 
 print("VideoID: " + showID)
 
